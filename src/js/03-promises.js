@@ -1,18 +1,15 @@
 import Notiflix from 'notiflix';
 
-elements = {
-  form: document.querySelector('.form'),
-  delay: document.querySelector('input[name="delay"]'),
-  step: document.querySelector('input[name="step"]'),
-  amount: document.querySelector('input[name="amount"]'),
-};
-let promise;
+const form = document.querySelector('.form');
+const timeDelay = document.querySelector('input[name="delay"]');
+const timeStep = document.querySelector('input[name="step"]');
+const repeatAmount = document.querySelector('input[name="amount"]');
 
 function submit(evt) {
   evt.preventDefault();
-  let delay = Number(elements.delay.value);
-  const step = Number(elements.step.value);
-  const amount = Number(elements.amount.value);
+  let delay = Number(timeDelay.value);
+  const step = Number(timeStep.value);
+  const amount = Number(repeatAmount.value);
   let position;
   for (let i = 1; i <= amount; i += 1) {
     createPromise(i, delay);
@@ -42,4 +39,4 @@ function createPromise(position, delay) {
     });
 }
 
-elements.form.addEventListener('submit', submit);
+form.addEventListener('submit', submit);
