@@ -9,7 +9,7 @@ elements = {
 
 function submit(evt) {
   evt.preventDefault();
-  const delay = Number(elements.delay.value);
+  let delay = Number(elements.delay.value);
   const step = Number(elements.step.value);
   const amount = Number(elements.amount.value);
   let position;
@@ -23,7 +23,7 @@ function createPromise(position, delay) {
   // position = Number(elements.amount.value);
 
   const shouldResolve = Math.random() > 0.3;
-  const promise = new Promise((resolve, reject) => {
+  promise = new Promise((resolve, reject) => {
     setTimeout(() => {
       if (shouldResolve) {
         resolve({ position, delay });
