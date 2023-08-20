@@ -6,6 +6,7 @@ elements = {
   step: document.querySelector('input[name="step"]'),
   amount: document.querySelector('input[name="amount"]'),
 };
+let promise;
 
 function submit(evt) {
   evt.preventDefault();
