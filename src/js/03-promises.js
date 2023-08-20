@@ -4,6 +4,7 @@ const form = document.querySelector('.form');
 const timeDelay = document.querySelector('input[name="delay"]');
 const timeStep = document.querySelector('input[name="step"]');
 const repeatAmount = document.querySelector('input[name="amount"]');
+let promise;
 
 function submit(evt) {
   evt.preventDefault();
